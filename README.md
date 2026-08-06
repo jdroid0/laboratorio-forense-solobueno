@@ -1,6 +1,6 @@
 # Laboratorio de reconstrucción forense — Solo Bueno S.A.
 
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/USUARIO/REPOSITORIO/HEAD?labpath=Laboratorio_Reconstruccion_Forense.ipynb)
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/jdroid0/laboratorio-forense-solobueno/HEAD?labpath=Laboratorio_Reconstruccion_Forense.ipynb)
 
 ## Propósito
 
