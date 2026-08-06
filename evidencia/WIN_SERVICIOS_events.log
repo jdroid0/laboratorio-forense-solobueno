@@ -1,0 +1,13 @@
+2026-07-29 00:30:03  EventID=5156   Source=Microsoft-Windows-Security-Auditing  The Windows Filtering Platform permitted a connection. Destination Port: 445. Source Address: 10.8.0.37
+2026-07-29 01:50:10  EventID=8003   Source=srv                               The server is using the SMB1 protocol, which is deprecated. Client requesting SMB1 access: 10.8.0.37
+2026-07-29 01:50:44  EventID=1001   Source=Microsoft-Windows-WER-SystemErrorReporting  The computer has rebooted from a bugcheck. Bugcheck code: 0x0000003b. Faulting module: srv.sys. A dump was saved in C:\Windows\MEMORY.DMP
+2026-07-29 01:50:58  EventID=7036   Source=Service Control Manager           The Server (srv) service entered the running state
+2026-07-29 01:51:02  EventID=11     Source=Microsoft-Windows-Sysmon          FileCreate. Image: C:\Windows\System32\wscript.exe  TargetFilename: C:\Users\Public\puravida.js
+2026-07-29 01:51:02  EventID=4688   Source=Microsoft-Windows-Security-Auditing  A new process has been created. New Process Name: C:\Windows\System32\wscript.exe  Process Command Line: wscript.exe C:\Users\Public\puravida.js  Creator Process Name: C:\Windows\System32\services.exe
+2026-07-29 03:01:01  EventID=5140   Source=Microsoft-Windows-Security-Auditing  A network share object was accessed. Share Name: \\ELGARROTAZO\creditos.csv
+2026-07-29 03:01:02  EventID=3      Source=Microsoft-Windows-Sysmon          Network connection detected. Image: C:\Windows\System32\wscript.exe  DestinationIp: 45.77.132.90  DestinationPort: 80  DestinationHostname: elgarrotazo.co
+2026-07-29 03:01:07  EventID=5140   Source=Microsoft-Windows-Security-Auditing  A network share object was accessed. Share Name: \\ELGARROTAZO\clientes.csv
+2026-07-29 03:02:55  EventID=5140   Source=Microsoft-Windows-Security-Auditing  A network share object was accessed. Share Name: \\SEPALMO\seguros.csv
+2026-07-29 03:04:10  EventID=5140   Source=Microsoft-Windows-Security-Auditing  A network share object was accessed. Share Name: \\HASTATOPARCONCERCA\entregas.csv
+2026-07-29 03:05:40  EventID=23     Source=Microsoft-Windows-Sysmon          FileDelete. Image: C:\Windows\System32\wscript.exe  TargetFilename: C:\Users\Public\puravida.js
+2026-07-29 03:05:41  EventID=4663   Source=Microsoft-Windows-Security-Auditing  An attempt was made to access an object. Object Name: C:\Users\Public\puravida.js  Accesses: DELETE

@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Solo Bueno S.A. - Generador y validador de JWT para VPN</title>
+<style>
+  :root{ --azul:#33506E; --azul2:#5B7DA6; --bg:#f4f6f9; --linea:#d7dee7; --ok:#1e7a45; --mal:#b23b3b; }
+  *{ box-sizing:border-box; }
+  body{ font-family:Segoe UI, Helvetica, Arial, sans-serif; margin:0; background:var(--bg); color:#22303f; }
+  header{ background:var(--azul); color:#fff; padding:18px 24px; }
+  header h1{ margin:0; font-size:20px; font-weight:600; }
+  header p{ margin:4px 0 0; font-size:13px; opacity:.85; }
+  .wrap{ max-width:980px; margin:20px auto; padding:0 16px; }
+  .tabs{ display:flex; gap:8px; margin-bottom:14px; }
+  .tabs button{ flex:1; padding:12px; border:1px solid var(--linea); background:#fff; border-radius:8px; cursor:pointer; font-size:15px; color:var(--azul); }
+  .tabs button.active{ background:var(--azul); color:#fff; border-color:var(--azul); }
+  .card{ background:#fff; border:1px solid var(--linea); border-radius:10px; padding:20px; margin-bottom:16px; }
+  .card h2{ margin:0 0 14px; font-size:16px; color:var(--azul); }
+  label{ display:block; font-size:13px; margin:10px 0 4px; font-weight:600; }
+  input[type=text], input[type=email], input[type=date], input[type=password], textarea{
+    width:100%; padding:9px 10px; border:1px solid var(--linea); border-radius:6px; font-size:14px; font-family:inherit; }
+  textarea{ resize:vertical; min-height:90px; font-family:Consolas, monospace; font-size:12.5px; }
+  .row{ display:flex; gap:14px; flex-wrap:wrap; }
+  .row > div{ flex:1; min-width:200px; }
+  button.action{ margin-top:16px; background:var(--azul2); color:#fff; border:none; padding:11px 18px; border-radius:7px; cursor:pointer; font-size:14px; }
+  button.action:hover{ background:var(--azul); }
+  .out{ margin-top:16px; }
+  .token{ word-break:break-all; background:#0f1b2a; color:#d6e2f0; padding:12px; border-radius:8px; font-family:Consolas, monospace; font-size:12.5px; }
+  .token .h{ color:#f08c8c; } .token .p{ color:#8cd0f0; } .token .s{ color:#a6e2a6; }
+  table.claims{ border-collapse:collapse; width:100%; margin-top:12px; font-size:13.5px; }
+  table.claims td, table.claims th{ border:1px solid var(--linea); padding:7px 9px; text-align:left; }
+  table.claims th{ background:#eef3fa; }
+  .estado{ font-size:15px; margin:6px 0; }
+  .small{ font-size:12px; color:#5a6b7d; margin-top:10px; }
+  .file{ margin-top:6px; }
+</style>
+</head>
+<body>
+<header>
+  <h1>Solo Bueno S.A. Utilidad de JWT para acceso VPN</h1>
+  <p>Generación y validación de tokens de acceso para las empresas amigas</p>
+</header>
+
+<div class="wrap">
+  <div class="tabs">
+    <button id="tabGen" class="active" onclick="show('gen')">Generar token</button>
+    <button id="tabVal" onclick="show('val')">Validar token</button>
+  </div>
+
+  <section id="gen" class="card">
+    <h2>Generación de token</h2>
+    <div class="row">
+      <div>
+        <label>Nombre completo</label>
+        <input type="text" id="g_name" placeholder="Nombre y apellidos">
+      </div>
+      <div>
+        <label>Correo</label>
+        <input type="email" id="g_email" placeholder="usuario@empresa.com">
+      </div>
+    </div>
+    <div class="row">
+      <div>
+        <label>Fecha de expiración</label>
+        <input type="date" id="g_exp">
+      </div>
+      <div></div>
+    </div>
+    <button class="action" onclick="generar()">Generar JWT</button>
+    <div class="out" id="g_out"></div>
+  </section>
+
+  <section id="val" class="card" style="display:none">
+    <h2>Validación de token</h2>
+    <label>Pegue el token o cargue un archivo</label>
+    <textarea id="v_token" placeholder="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...."></textarea>
+    <div class="file"><input type="file" id="v_file" accept=".txt,.jwt,.json" onchange="cargarArchivo(event)"></div>
+    <button class="action" onclick="validar()">Validar JWT</button>
+    <div class="out" id="v_out"></div>
+  </section>
+
+  <p class="small">Nota académica. El token contiene el nombre, el correo, la fecha de expiración y claims que indican que es para VPN. La firma HS256 solo garantiza integridad respecto de la clave secreta. La verificación de identidad del solicitante y del sujeto del token es un control de proceso que debe realizar el equipo de TI.</p>
+</div>
+
+<script>
+// ---------- SHA-256 y HMAC en JavaScript puro ----------
+function _sha256(data){
+  const K=new Uint32Array([
+    0x428a2f98,0x71374491,0xb5c0fbcf,0xe9b5dba5,0x3956c25b,0x59f111f1,0x923f82a4,0xab1c5ed5,
+    0xd807aa98,0x12835b01,0x243185be,0x550c7dc3,0x72be5d74,0x80deb1fe,0x9bdc06a7,0xc19bf174,
+    0xe49b69c1,0xefbe4786,0x0fc19dc6,0x240ca1cc,0x2de92c6f,0x4a7484aa,0x5cb0a9dc,0x76f988da,
+    0x983e5152,0xa831c66d,0xb00327c8,0xbf597fc7,0xc6e00bf3,0xd5a79147,0x06ca6351,0x14292967,
+    0x27b70a85,0x2e1b2138,0x4d2c6dfc,0x53380d13,0x650a7354,0x766a0abb,0x81c2c92e,0x92722c85,
+    0xa2bfe8a1,0xa81a664b,0xc24b8b70,0xc76c51a3,0xd192e819,0xd6990624,0xf40e3585,0x106aa070,
+    0x19a4c116,0x1e376c08,0x2748774c,0x34b0bcb5,0x391c0cb3,0x4ed8aa4a,0x5b9cca4f,0x682e6ff3,
+    0x748f82ee,0x78a5636f,0x84c87814,0x8cc70208,0x90befffa,0xa4506ceb,0xbef9a3f7,0xc67178f2]);
+  let h0=0x6a09e667,h1=0xbb67ae85,h2=0x3c6ef372,h3=0xa54ff53a,h4=0x510e527f,h5=0x9b05688c,h6=0x1f83d9ab,h7=0x5be0cd19;
+  const ml=data.length, bitLen=ml*8;
+  const padded=new Uint8Array((((ml+8)>>6)+1)*64);
+  padded.set(data); padded[ml]=0x80;
+  const dv=new DataView(padded.buffer);
+  dv.setUint32(padded.length-4, bitLen>>>0, false);
+  dv.setUint32(padded.length-8, Math.floor(bitLen/0x100000000), false);
+  const w=new Uint32Array(64);
+  const rotr=(x,n)=>(x>>>n)|(x<<(32-n));
+  for(let i=0;i<padded.length;i+=64){
+    for(let j=0;j<16;j++) w[j]=dv.getUint32(i+j*4,false);
+    for(let j=16;j<64;j++){
+      const s0=rotr(w[j-15],7)^rotr(w[j-15],18)^(w[j-15]>>>3);
+      const s1=rotr(w[j-2],17)^rotr(w[j-2],19)^(w[j-2]>>>10);
+      w[j]=(w[j-16]+s0+w[j-7]+s1)|0;
+    }
+    let a=h0,b=h1,c=h2,d=h3,e=h4,f=h5,g=h6,h=h7;
+    for(let j=0;j<64;j++){
+      const S1=rotr(e,6)^rotr(e,11)^rotr(e,25);
+      const ch=(e&f)^((~e)&g);
+      const t1=(h+S1+ch+K[j]+w[j])|0;
+      const S0=rotr(a,2)^rotr(a,13)^rotr(a,22);
+      const maj=(a&b)^(a&c)^(b&c);
+      const t2=(S0+maj)|0;
+      h=g;g=f;f=e;e=(d+t1)|0;d=c;c=b;b=a;a=(t1+t2)|0;
+    }
+    h0=(h0+a)|0;h1=(h1+b)|0;h2=(h2+c)|0;h3=(h3+d)|0;h4=(h4+e)|0;h5=(h5+f)|0;h6=(h6+g)|0;h7=(h7+h)|0;
+  }
+  const out=new Uint8Array(32), odv=new DataView(out.buffer);
+  [h0,h1,h2,h3,h4,h5,h6,h7].forEach((hh,idx)=>odv.setUint32(idx*4,hh>>>0,false));
+  return out;
+}
+function concat(a,b){ const c=new Uint8Array(a.length+b.length); c.set(a); c.set(b,a.length); return c; }
+function hmacSha256(keyBytes,msgBytes){
+  const block=64; let key=keyBytes;
+  if(key.length>block) key=_sha256(key);
+  const k=new Uint8Array(block); k.set(key);
+  const ipad=new Uint8Array(block), opad=new Uint8Array(block);
+  for(let i=0;i<block;i++){ ipad[i]=k[i]^0x36; opad[i]=k[i]^0x5c; }
+  return _sha256(concat(opad,_sha256(concat(ipad,msgBytes))));
+}
+const enc=new TextEncoder(), dec=new TextDecoder();
+function b64url(bytes){ let bin=''; for(const b of bytes) bin+=String.fromCharCode(b);
+  return btoa(bin).replace(/\+/g,'-').replace(/\//g,'_').replace(/=+$/,''); }
+function b64urlToBytes(s){ s=s.replace(/-/g,'+').replace(/_/g,'/'); while(s.length%4) s+='=';
+  const bin=atob(s); const a=new Uint8Array(bin.length); for(let i=0;i<bin.length;i++) a[i]=bin.charCodeAt(i); return a; }
+function signInput(input,secret){ return b64url(hmacSha256(enc.encode(secret), enc.encode(input))); }
+
+// Clave secreta de firma embebida en la herramienta
+const SECRET="solobueno123";
+
+// ---------- Interfaz ----------
+function show(id){
+  document.getElementById('gen').style.display = id==='gen'?'block':'none';
+  document.getElementById('val').style.display = id==='val'?'block':'none';
+  document.getElementById('tabGen').classList.toggle('active', id==='gen');
+  document.getElementById('tabVal').classList.toggle('active', id==='val');
+}
+function esc(s){ return String(s).replace(/[&<>]/g, c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c])); }
+
+function generar(){
+  const name=document.getElementById('g_name').value.trim();
+  const email=document.getElementById('g_email').value.trim();
+  const expStr=document.getElementById('g_exp').value;
+  const secret=SECRET;
+  const out=document.getElementById('g_out');
+  if(!name||!email||!expStr){ out.innerHTML='<p class="estado">Complete nombre, correo y fecha de expiración.</p>'; return; }
+  const exp=Math.floor(new Date(expStr+'T23:59:59').getTime()/1000);
+  const iat=Math.floor(Date.now()/1000);
+  const header={ alg:'HS256', typ:'JWT' };
+  const payload={ name:name, email:email, scope:'VPN', type:'Authentication', iss:'solobueno.cr', iat:iat, exp:exp };
+  const input=b64url(enc.encode(JSON.stringify(header)))+'.'+b64url(enc.encode(JSON.stringify(payload)));
+  const sig=signInput(input,secret);
+  const token=input+'.'+sig;
+  const p=token.split('.');
+  out.innerHTML=
+    '<div class="token"><span class="h">'+p[0]+'</span>.<span class="p">'+p[1]+'</span>.<span class="s">'+p[2]+'</span></div>'+
+    '<button class="action" onclick="descargar(\''+token+'\')">Descargar token</button>'+
+    '<button class="action" style="background:#6b7a8c" onclick="copiar(\''+token+'\')">Copiar</button>';
+}
+function descargar(token){
+  const blob=new Blob([token],{type:'text/plain'});
+  const a=document.createElement('a'); a.href=URL.createObjectURL(blob);
+  a.download='jwt_vpn.txt'; a.click();
+}
+function copiar(t){ navigator.clipboard && navigator.clipboard.writeText(t); }
+
+function cargarArchivo(ev){
+  const f=ev.target.files[0]; if(!f) return;
+  const r=new FileReader();
+  r.onload=e=>{ document.getElementById('v_token').value=e.target.result.trim(); };
+  r.readAsText(f);
+}
+function validar(){
+  const token=document.getElementById('v_token').value.trim();
+  const secret=SECRET;
+  const out=document.getElementById('v_out');
+  const parts=token.split('.');
+  if(parts.length!==3){ out.innerHTML='<p class="estado">❌ El token no tiene el formato de tres partes de un JWT.</p>'; return; }
+  let header,payload;
+  try{ header=JSON.parse(dec.decode(b64urlToBytes(parts[0]))); payload=JSON.parse(dec.decode(b64urlToBytes(parts[1]))); }
+  catch(e){ out.innerHTML='<p class="estado">❌ No se pudo decodificar el contenido del token.</p>'; return; }
+  const esperada=signInput(parts[0]+'.'+parts[1], secret);
+  const firmaOk = esperada===parts[2];
+  const ahora=Math.floor(Date.now()/1000);
+  const expirado = payload.exp ? (payload.exp < ahora) : true;
+  const fExp = payload.exp ? new Date(payload.exp*1000).toLocaleString('es-CR') : 'sin dato';
+  const fIat = payload.iat ? new Date(payload.iat*1000).toLocaleString('es-CR') : 'sin dato';
+
+  let filas='';
+  for(const k in payload){ filas+='<tr><td>'+esc(k)+'</td><td>'+esc(payload[k])+'</td></tr>'; }
+
+  out.innerHTML=
+    '<p class="estado">'+(firmaOk?'✅ La firma coincide, el token no fue alterado':'❌ La firma no coincide, el token fue alterado o la clave es incorrecta')+'</p>'+
+    '<p class="estado">'+(expirado?'⏰ El token está expirado':'✅ El token está vigente')+'</p>'+
+    '<table class="claims"><tr><th>Campo</th><th>Valor</th></tr>'+
+    '<tr><td>Algoritmo</td><td>'+esc(header.alg||'')+'</td></tr>'+
+    filas+
+    '<tr><td>Emitido (iat)</td><td>'+esc(fIat)+'</td></tr>'+
+    '<tr><td>Expira (exp)</td><td>'+esc(fExp)+'</td></tr></table>';
+}
+
+// fecha por defecto tres meses adelante
+(function(){ const d=new Date(); d.setMonth(d.getMonth()+3);
+  document.getElementById('g_exp').value=d.toISOString().slice(0,10); })();
+</script>
+</body>
+</html>

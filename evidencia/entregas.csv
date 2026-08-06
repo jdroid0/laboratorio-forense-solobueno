@@ -1,0 +1,101 @@
+﻿cedula,nombre,id_articulo,peso_kg,direccion_entrega,provincia,canton,distrito,telefono
+5-8603-3051,Silvia Umaña Retana,ART-12561,11,"300 metros sur de la plaza de deportes, casa amarilla",Cartago,La Unión,San Diego,7561-1257
+2-6406-5962,Douglas Castro Segura,ART-37620,87,"500 metros este de la iglesia católica, casa beige",Heredia,Santo Domingo,San Vicente,8991-4987
+1-3964-4994,Fabiola Retana Fonseca,ART-34019,8,"500 metros norte de la iglesia católica, casa amarilla",Heredia,Heredia,Heredia,7358-5271
+4-8096-1475,Fernando Obando Brenes,ART-13666,53,"25 metros norte de el EBAIS, casa gris",Heredia,Heredia,Heredia,8165-4730
+6-9565-3262,Vanessa Villalobos Aguilar,ART-21814,102,"200 metros oeste de la sucursal del banco, casa celeste",San José,Escazú,San Rafael,8972-5833
+7-7239-8431,Alejandro Zúñiga Barquero,ART-58613,83,"150 metros este de el parque central, casa gris",San José,Escazú,San Rafael,8313-6643
+7-7604-2716,Douglas Jiménez Godínez,ART-86510,45,"500 metros norte de la iglesia católica, casa verde",Puntarenas,Puntarenas,Puntarenas,8473-7697
+2-3439-6897,Andrés Picado Vargas,ART-43879,116,"25 metros sur de el cruce principal, casa gris",San José,San José,Hospital,8776-5266
+3-5969-2823,Carolina Céspedes Montero,ART-10726,48,"200 metros sur de el parque central, casa celeste",Alajuela,San Carlos,Aguas Zarcas,6127-4192
+5-4396-3889,Melissa Blanco Retana,ART-68727,52,"500 metros oeste de la escuela, casa amarilla",Guanacaste,Nicoya,Nicoya,8815-2831
+2-6869-3535,Laura Bonilla Vargas,ART-67195,50,"400 metros este de el EBAIS, casa gris",San José,Desamparados,Desamparados,8357-2719
+5-7427-2248,Mauricio Madrigal Retana,ART-38205,67,"300 metros oeste de la gasolinera, casa beige",Cartago,Cartago,El Carmen,6830-3059
+6-8877-5577,José Umaña Solís,ART-76608,10,"50 metros norte de el supermercado, casa blanca",Limón,Limón,Valle La Estrella,8903-4869
+1-5647-1594,Carolina Herrera Fonseca,ART-99087,94,"400 metros norte de el cruce principal, casa gris",Puntarenas,Osa,Puerto Cortés,7410-8454
+1-6607-4381,Gabriela Fonseca Alfaro,ART-71162,78,"200 metros oeste de el EBAIS, casa verde",Guanacaste,Nicoya,Nosara,7600-9229
+6-1993-5169,Karla Ramírez Obando,ART-70983,25,"50 metros este de la escuela, casa gris",Limón,Pococí,Jiménez,8517-2158
+7-9247-7800,Diego Elizondo Herrera,ART-25593,41,"400 metros este de el EBAIS, casa blanca",Cartago,Cartago,Oriental,7762-4060
+1-3948-6860,Jessica Rojas Quesada,ART-82150,84,"25 metros norte de la iglesia católica, casa celeste",San José,Desamparados,San Juan de Dios,7658-5022
+5-6260-2069,Tatiana Rodríguez Godínez,ART-54448,112,"400 metros sur de la plaza de deportes, casa gris",Alajuela,San Carlos,Aguas Zarcas,7904-1507
+2-2915-2099,Bryan Bonilla Araya,ART-91547,97,"400 metros sur de la plaza de deportes, casa verde",Limón,Pococí,Cariari,7492-6563
+7-7288-6081,Andrea Mora Chaves,ART-53035,45,"200 metros oeste de el supermercado, casa gris",Heredia,Santo Domingo,San Vicente,7249-5815
+2-3693-2800,Esteban Bonilla Segura,ART-55223,35,"50 metros sur de el parque central, casa beige",Cartago,Cartago,Occidental,8905-9367
+2-2464-2303,Paola Castro Calderón,ART-25921,51,"400 metros norte de la escuela, casa beige",Cartago,La Unión,Tres Ríos,7685-5422
+2-5724-1630,Sofía Vega Brenes,ART-11864,51,"25 metros norte de la iglesia católica, casa amarilla",Puntarenas,Osa,Puerto Cortés,8454-9979
+3-1014-7111,María Alfaro Villalobos,ART-85132,100,"100 metros este de el cruce principal, casa terracota",Alajuela,Alajuela,San José,8424-5426
+3-5268-8635,Gustavo Vega Núñez,ART-41346,50,"300 metros sur de la plaza de deportes, casa blanca",San José,San José,Hospital,8924-1544
+3-8723-5203,Jorge Quesada Núñez,ART-27064,49,"400 metros oeste de la iglesia católica, casa terracota",Cartago,Cartago,Occidental,6365-3460
+1-6766-3949,Vanessa Castro Picado,ART-96305,38,"150 metros este de la sucursal del banco, casa amarilla",San José,Desamparados,San Juan de Dios,6831-5353
+4-7158-1654,Kevin Umaña Quesada,ART-97743,96,"25 metros sur de la iglesia católica, casa amarilla",Cartago,Cartago,Occidental,7231-7848
+1-6652-3296,Katherine Mora Mora,ART-28724,42,"150 metros oeste de la iglesia católica, casa verde",Heredia,Santo Domingo,San Vicente,8396-2282
+3-6401-5487,Carlos Picado Salas,ART-37410,108,"100 metros sur de el EBAIS, casa beige",Guanacaste,Nicoya,Nicoya,8751-3335
+5-6215-2137,Jorge Herrera Ramírez,ART-98680,18,"25 metros este de la gasolinera, casa gris",Heredia,Heredia,San Francisco,8733-9619
+4-5053-7281,Alberto Elizondo Jiménez,ART-10045,32,"200 metros oeste de la iglesia católica, casa terracota",San José,San José,Hospital,8135-8795
+7-1169-2808,Tatiana Cordero Rojas,ART-93035,7,"400 metros sur de la iglesia católica, casa beige",San José,Escazú,San Rafael,7333-3868
+7-5956-5348,Jorge Quesada Umaña,ART-54550,39,"25 metros oeste de la iglesia católica, casa amarilla",San José,Desamparados,Desamparados,6669-7997
+7-8183-1362,Gustavo Mora Brenes,ART-88043,85,"500 metros este de la plaza de deportes, casa beige",Guanacaste,Nicoya,Nicoya,7155-7302
+1-9803-2312,Silvia Cordero Cascante,ART-94693,67,"100 metros sur de el supermercado, casa amarilla",Limón,Pococí,Guápiles,7412-4221
+6-2045-4868,Tatiana Barquero Núñez,ART-66801,50,"300 metros oeste de el EBAIS, casa celeste",Guanacaste,Nicoya,Mansión,7471-9735
+6-3029-5236,Roberto Brenes Zúñiga,ART-23888,91,"150 metros norte de el cruce principal, casa celeste",Guanacaste,Liberia,Nacascolo,7260-8814
+1-1542-3024,Alejandro Chaves Céspedes,ART-61573,16,"500 metros norte de la gasolinera, casa verde",Puntarenas,Puntarenas,Chacarita,8862-6685
+5-7826-1876,Alejandro Rodríguez Araya,ART-48596,73,"50 metros este de la sucursal del banco, casa blanca",Puntarenas,Puntarenas,El Roble,8352-6544
+7-6920-3956,Verónica Zúñiga Arce,ART-38297,59,"300 metros este de el parque central, casa blanca",San José,Escazú,Escazú,7166-1110
+3-3766-6329,Kevin Castro Salas,ART-95542,23,"300 metros norte de el parque central, casa terracota",Guanacaste,Liberia,Nacascolo,7682-8434
+1-5431-4243,Paola Retana Picado,ART-68408,38,"150 metros sur de la sucursal del banco, casa terracota",Guanacaste,Liberia,Nacascolo,8342-5981
+7-4066-1064,Andrea Sánchez Blanco,ART-29217,105,"500 metros este de el parque central, casa terracota",Heredia,Heredia,Heredia,7869-4615
+6-8021-7514,Natalia Araya Calderón,ART-32311,42,"25 metros norte de la sucursal del banco, casa beige",Limón,Limón,Río Blanco,7605-2460
+1-2781-7713,Priscilla Alfaro Cordero,ART-80307,104,"300 metros sur de el supermercado, casa terracota",Guanacaste,Liberia,Liberia,6332-7316
+4-6920-2916,Laura Cascante Villalobos,ART-76644,9,"300 metros este de el parque central, casa verde",Heredia,Heredia,San Francisco,8860-6986
+1-5661-5455,Ricardo Brenes Madrigal,ART-12635,108,"100 metros norte de el parque central, casa terracota",San José,San José,Zapote,8539-3439
+2-4949-5610,Marcela Araya Alfaro,ART-64526,77,"150 metros norte de la iglesia católica, casa blanca",Limón,Limón,Limón,6445-8342
+5-9243-6268,Douglas Chaves Godínez,ART-72041,66,"50 metros oeste de la gasolinera, casa celeste",Cartago,Cartago,El Carmen,6164-1065
+7-1003-4750,José Cordero Céspedes,ART-95627,117,"150 metros norte de el EBAIS, casa blanca",Cartago,Cartago,Oriental,7747-4799
+7-1781-2482,Verónica Núñez Retana,ART-27716,120,"300 metros sur de la plaza de deportes, casa beige",Alajuela,Alajuela,San José,7564-4566
+5-7333-7225,Laura Umaña Godínez,ART-71290,58,"500 metros este de el parque central, casa verde",Alajuela,Alajuela,Carrizal,8494-6261
+2-7146-6204,Carlos Rodríguez Vega,ART-26812,71,"300 metros este de la escuela, casa amarilla",San José,Escazú,Escazú,7903-2195
+5-6820-3281,Laura Ramírez Retana,ART-64118,84,"100 metros oeste de la escuela, casa verde",Limón,Limón,Valle La Estrella,6652-7504
+2-4597-4807,Jorge Herrera Segura,ART-17778,36,"100 metros oeste de el parque central, casa beige",San José,San José,Merced,7304-8040
+7-6466-3573,Gustavo Godínez Céspedes,ART-23399,61,"150 metros este de el cruce principal, casa celeste",San José,Desamparados,Desamparados,7278-1712
+6-1859-4415,Manuel Mora Rojas,ART-46277,114,"25 metros sur de la iglesia católica, casa blanca",Limón,Pococí,Cariari,8335-3343
+3-8234-6180,Adriana Zúñiga Calderón,ART-57701,84,"500 metros este de el parque central, casa amarilla",Alajuela,San Carlos,Aguas Zarcas,7162-6075
+5-8707-4735,Roberto Blanco Elizondo,ART-39601,20,"25 metros oeste de el EBAIS, casa beige",San José,San José,Carmen,7359-1909
+5-5926-5059,Silvia Montero Herrera,ART-29310,115,"300 metros norte de la escuela, casa gris",San José,Escazú,Escazú,8246-8025
+1-4582-5840,Manuel Rojas Alfaro,ART-26883,75,"25 metros oeste de el parque central, casa amarilla",Limón,Limón,Limón,7499-3239
+4-9905-4714,Randall Calderón Araya,ART-12188,38,"400 metros sur de la plaza de deportes, casa gris",San José,San José,Zapote,6520-1239
+6-7751-8663,Natalia Jiménez Céspedes,ART-44302,78,"300 metros oeste de la plaza de deportes, casa amarilla",San José,Escazú,Escazú,7735-1546
+7-9271-2815,Vanessa Obando Villalobos,ART-53637,36,"100 metros norte de la plaza de deportes, casa terracota",Limón,Pococí,Jiménez,6685-2819
+1-5585-6153,Alejandro Villalobos Montero,ART-62087,7,"500 metros este de el EBAIS, casa blanca",Guanacaste,Nicoya,Nicoya,8285-1798
+4-5808-4801,Adriana Brenes Brenes,ART-26010,55,"400 metros sur de la sucursal del banco, casa gris",San José,Desamparados,Desamparados,6833-2084
+1-2193-8874,Tatiana Ramírez Fonseca,ART-58497,15,"400 metros oeste de la gasolinera, casa terracota",San José,Escazú,San Rafael,8708-7692
+2-4196-8147,Valeria Vargas Blanco,ART-25775,34,"100 metros norte de la gasolinera, casa amarilla",Puntarenas,Puntarenas,El Roble,7207-8349
+6-9658-4372,Luis Segura Salas,ART-63766,21,"150 metros oeste de el EBAIS, casa amarilla",Limón,Pococí,Guápiles,7513-7077
+5-6035-3944,Tatiana Núñez Umaña,ART-35401,118,"25 metros este de la sucursal del banco, casa beige",San José,Desamparados,San Juan de Dios,6684-7201
+4-7832-7593,Roberto Calderón Araya,ART-60535,108,"25 metros oeste de el parque central, casa verde",Puntarenas,Osa,Palmar,8582-5755
+7-9601-4651,Adriana Jiménez Aguilar,ART-25160,90,"500 metros norte de el supermercado, casa amarilla",Limón,Pococí,Guápiles,6748-8601
+2-8295-5953,Douglas Arce Vargas,ART-49178,87,"300 metros este de la plaza de deportes, casa blanca",Puntarenas,Puntarenas,El Roble,8524-5518
+5-1240-4282,Silvia Montero Alfaro,ART-54829,72,"200 metros este de el EBAIS, casa celeste",Cartago,Cartago,El Carmen,6221-6386
+4-9650-4304,Tatiana Alfaro Jiménez,ART-54081,93,"50 metros oeste de la plaza de deportes, casa verde",San José,Escazú,Escazú,6814-3945
+1-5852-6881,Paola Blanco Herrera,ART-11391,74,"150 metros norte de el EBAIS, casa terracota",Limón,Limón,Limón,6249-8947
+1-8362-4118,Mauricio Elizondo Umaña,ART-25636,101,"300 metros oeste de el cruce principal, casa celeste",Heredia,Heredia,Heredia,7778-9590
+7-4545-4783,Tatiana Rodríguez Ramírez,ART-27915,5,"500 metros este de la gasolinera, casa blanca",Limón,Pococí,Jiménez,6733-8490
+1-7155-1500,Vanessa Retana Salas,ART-26333,62,"300 metros oeste de el supermercado, casa gris",Guanacaste,Liberia,Liberia,7108-7589
+3-2160-2756,Paola Montero Herrera,ART-81752,72,"100 metros oeste de la iglesia católica, casa terracota",Limón,Limón,Río Blanco,8648-1206
+3-4205-9146,Paola Montero Vega,ART-92913,21,"150 metros este de la escuela, casa gris",Guanacaste,Nicoya,Mansión,6479-1596
+4-7026-8847,Marcela Quesada Castro,ART-57318,62,"100 metros este de la plaza de deportes, casa celeste",San José,Desamparados,San Miguel,7198-9975
+3-6607-6475,Randall Picado Brenes,ART-88855,27,"150 metros norte de la iglesia católica, casa beige",Limón,Pococí,Cariari,8550-5382
+2-6358-6821,Gustavo Madrigal Montero,ART-39357,87,"500 metros este de el parque central, casa amarilla",San José,Escazú,San Rafael,6633-1477
+4-3860-1591,Adriana Villalobos Fonseca,ART-43734,105,"300 metros sur de la sucursal del banco, casa terracota",Guanacaste,Nicoya,Nicoya,8797-5394
+7-4560-6006,Kevin Quesada Godínez,ART-81046,105,"500 metros sur de el cruce principal, casa verde",Guanacaste,Nicoya,Mansión,6757-4794
+1-1896-9882,Verónica Blanco Araya,ART-95946,96,"300 metros oeste de la escuela, casa terracota",Cartago,Cartago,El Carmen,6626-8138
+1-1805-7899,Natalia Obando Castro,ART-52926,101,"300 metros norte de el parque central, casa terracota",Alajuela,San Carlos,Aguas Zarcas,7417-8832
+7-3099-8255,María Arce Segura,ART-98898,49,"300 metros oeste de el EBAIS, casa amarilla",Cartago,La Unión,Concepción,6831-6468
+6-2067-8389,Daniela Rojas Rojas,ART-80784,87,"50 metros norte de la escuela, casa celeste",Alajuela,Alajuela,Alajuela,7250-9321
+5-4339-9248,Douglas Cordero Bonilla,ART-94747,19,"50 metros oeste de la iglesia católica, casa gris",Guanacaste,Liberia,Cañas Dulces,7909-9234
+5-7877-7939,Natalia Godínez Villalobos,ART-23254,30,"150 metros este de la plaza de deportes, casa celeste",San José,Escazú,San Rafael,7510-8390
+3-1346-8751,Silvia Chaves Chaves,ART-31992,15,"150 metros sur de la escuela, casa terracota",Limón,Pococí,Cariari,8839-3590
+2-1996-3156,Katherine Jiménez Calderón,ART-19218,64,"150 metros sur de el supermercado, casa amarilla",San José,Escazú,San Antonio,6626-8669
+2-3465-6550,Sofía Obando Núñez,ART-39371,24,"100 metros este de la escuela, casa beige",Guanacaste,Liberia,Cañas Dulces,6336-2812
+1-8925-3879,Carolina Mora Campos,ART-86108,29,"150 metros sur de la gasolinera, casa terracota",Cartago,Cartago,El Carmen,8126-7735
+4-1369-6031,María Segura Blanco,ART-90227,59,"500 metros este de la escuela, casa gris",Limón,Pococí,Jiménez,8898-1497
+7-2271-2335,Kevin Godínez Bonilla,ART-85206,83,"50 metros este de la iglesia católica, casa blanca",Cartago,La Unión,Tres Ríos,8715-9526
